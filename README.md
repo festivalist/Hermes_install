@@ -29,6 +29,21 @@ huggingface-cli download OBLITERATUS/Qwen3.6-27B-OBLITERATED \
   --include "*Q4_K_M.gguf" \
   --local-dir ./qwen-obliterated
 ```
+- ^ der dauert, weil lädt 17gb runter
+- Symlink in WSL2 anlegen `ln -s "/mnt/c/Users/Desktop Dude/.ollama/models/blobs/sha256-ff6941ded525b34eb159496762c29dd0ec6e71dc31b74d57e75d871a03eec259" ./qwen27b.gguf`
+- weitere module installieren `uv pip install nvidia-cudnn-cu12==9.16.0.29`
+- 
+- SGLang Server starten
+```
+python3 -m sglang.launch_server \
+  --model-path QuantTrio/Qwen3.6-27B-AWQ \
+  --host 127.0.0.1 \
+  --port 30000 \
+  --mem-fraction-static 0.85 \
+  --reasoning-parser qwen3
+```
+- 
+- 
 
 # 2.Lokalen Inferenz-Server einrichten in WSL
 - Hermes Agent bietet Out-of-the-box-Unterstützung für Ollama
