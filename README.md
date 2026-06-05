@@ -50,7 +50,12 @@ SGLANG_DISABLE_CUDNN_CHECK=1 python3 -m sglang.launch_server \
   --reasoning-parser qwen3 \
   --disable-cuda-graph
 ```
-- 
+- Installation des Hermes Agents in WSL2
+- Öffne ein neues WSL2-Terminalfenster (während der SGLang-Server im alten Fenster aktiv bleibt). Der offizielle Installer lädt alle notwendigen Laufzeitumgebungen automatisch herunter:
+- `curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash`
+- rödel rödel
+- Aktualisiere im Anschluss die Umgebungsvariablen deiner Shell:
+- `source ~/.bashrc`
 - 
 
 # 2.Lokalen Inferenz-Server einrichten in WSL
