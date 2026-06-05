@@ -32,6 +32,10 @@ huggingface-cli download OBLITERATUS/Qwen3.6-27B-OBLITERATED \
 - ^ der dauert, weil lädt 17gb runter
 - Symlink in WSL2 anlegen `ln -s "/mnt/c/Users/Desktop Dude/.ollama/models/blobs/sha256-ff6941ded525b34eb159496762c29dd0ec6e71dc31b74d57e75d871a03eec259" ./qwen27b.gguf`
 - weitere module installieren `uv pip install nvidia-cudnn-cu12==9.16.0.29`
+- `sudo apt update && sudo apt install -y nvidia-cuda-toolkit ninja-build`
+- `export CUDA_HOME=/usr`
+- `sudo nano ~/bashrc`
+- und hier `export CUDA_HOME=/usr` am ende nochmal einsetzen
 - 
 - SGLang Server starten
 ```
@@ -39,7 +43,10 @@ SGLANG_DISABLE_CUDNN_CHECK=1 python3 -m sglang.launch_server \
   --model-path QuantTrio/Qwen3.6-27B-AWQ \
   --host 127.0.0.1 \
   --port 30000 \
-  --mem-fraction-static 0.85 \
+  --dtype bfloat16 \
+  --mem-fraction-static 0.89 \
+  --context-len 16384 \
+  --max-running-requests 1 \
   --reasoning-parser qwen3 \
   --disable-cuda-graph
 ```
