@@ -35,12 +35,13 @@ huggingface-cli download OBLITERATUS/Qwen3.6-27B-OBLITERATED \
 - 
 - SGLang Server starten
 ```
-python3 -m sglang.launch_server \
+SGLANG_DISABLE_CUDNN_CHECK=1 python3 -m sglang.launch_server \
   --model-path QuantTrio/Qwen3.6-27B-AWQ \
   --host 127.0.0.1 \
   --port 30000 \
   --mem-fraction-static 0.85 \
-  --reasoning-parser qwen3
+  --reasoning-parser qwen3 \
+  --disable-cuda-graph
 ```
 - 
 - 
