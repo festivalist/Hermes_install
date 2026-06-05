@@ -21,4 +21,4 @@
 - Wähle den Menüpunkt Model & Provider aus.
 - Konfiguriere Ollama als Provider und setze die API Base URL auf `http://localhost:11434/v1` .
 - Das System erkennt Qwen 3.6 via GET-Request an die /v1/models-Schnittstelle automatisch; bestätige die Nutzung mit Y.
-- Der Agent ist nun einsatzbereit und kann fortan mit dem Befehl `hermes` gestartet werden
+- Der Agent ist nun einsatzbereit und kann fortan mit dem Befehl `hermes` gestartet werden 
